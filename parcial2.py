@@ -88,22 +88,22 @@ mpl.title("Aproximaciones a las funciones")
                  
 mpl.subplot(3,1,1)
 mpl.title("Aproximaciones a las funciones")
-mpl.plot(x, e1, 'r',ls='--',label='sin')
-mpl.plot(x, ep, label="e")
+mpl.plot(x, e1, 'r',ls='--',label='Aproxexp(x)')
+mpl.plot(x, ep, label="exp(x)")
 mpl.ylabel("exp(X)")        
 #-------------------------------------------------------------------------------
 
 mpl.subplot(3,1,2)
 
-mpl.plot(x, sen1, 'r',ls='--',)
-mpl.plot(x, sin)
+mpl.plot(x, sen1, 'r',ls='--',label="Aproxsen(x)")
+mpl.plot(x, sin, label= "sen(x)")
 mpl.ylabel("sen(X)")  
 #------------------------------------------------------------------------------
 
 mpl.subplot(3,1,3)
 
-mpl.plot(x, cos1,'r',ls='--',label='sin')
-mpl.plot(x, cos)
+mpl.plot(x, cos1,'r',ls='--',label='Aproxcos(x)')
+mpl.plot(x, cos, label= "cos(x)")
 mpl.ylabel("cos(X)")  
 mpl.show()
 
