@@ -1,21 +1,24 @@
-# -*- coding: utf-8 -*-
-
-#class funcion(){
-        #}
-"""
+#JUAN FELIPE VILLARREAL RESTREPO
 
 
-"""
+
 import numpy as np
 import matplotlib.pyplot as mpl
 
 pi = 3.1415926535897
+"""
+Defino una función factorial que me permitirá evitar la librería math, y 
+hacer mis respectivas aproximaciones ciertas funciones en específico.
+
+"""
 
 def factorial (n):
     f = 1
     for i in range (2, n+1):
         f = f*i
     return (f)
+
+#se procede a crear una clase Funciones donde estarán los métodos de aproximación.
 
 class Funcion:
     
@@ -53,49 +56,55 @@ class Funcion:
 
 
 
-sen1= Funcion.func_sen(1.5, 10)
 
-cos1= Funcion.func_cos(1.5, 10)
 
 
 
 
 #----------------------------------------------------------------------------
+"""
+como siguiente paso, es gtraficar las funciones aproximaciones(exp(x), cos(x),
+sen(x) junto con lo que corresponde a las funciones dasdas en sí.
 
-x= np.linspace(0, 5, 100)
-ep= np.exp(x)
-cos=np.cos(x)
-sin=np.sin(x)
+"""
+#---------------------------------------------------------------------------
+x= np.linspace(0, 5, 100) #que nos dará los puntos que se evaluarán el la función.
 
-e1= Funcion.func_e( x, 3)      
+n= int(input("ingrese la presición que deseas en la serie: "))
 
-sen1= Funcion.func_sen(x, 20)
 
-cos1= Funcion.func_cos(x, 3)
+ep= np.exp(x)  #
+cos=np.cos(x)  #Las funciones exactas.
+sin=np.sin(x)  #
+
+e1= Funcion.func_e( x, n)      
+
+sen1= Funcion.func_sen(x, n)
+
+cos1= Funcion.func_cos(x, n)
 
 mpl.title("Aproximaciones a las funciones")
-mpl.subplot(1,1,1)
+ 
+                 
+mpl.subplot(3,1,1)
 mpl.title("Aproximaciones a las funciones")
-mpl.plot(x, e1)
-mpl.plot(x, ep)
-mpl.xlabel("X")
-mpl.ylabel("Aproximación")
-        
-
+mpl.plot(x, e1, 'r',ls='--',label='sin')
+mpl.plot(x, ep, label="e")
+mpl.ylabel("exp(X)")        
 #-------------------------------------------------------------------------------
 
+mpl.subplot(3,1,2)
 
-mpl.subplot(1,1,1)
-
-mpl.plot(x, sen1)
+mpl.plot(x, sen1, 'r',ls='--',)
 mpl.plot(x, sin)
+mpl.ylabel("sen(X)")  
 #------------------------------------------------------------------------------
 
-mpl.subplot(1,1,1)
+mpl.subplot(3,1,3)
 
-mpl.plot(x, cos1)
+mpl.plot(x, cos1,'r',ls='--',label='sin')
 mpl.plot(x, cos)
-
+mpl.ylabel("cos(X)")  
 mpl.show()
 
 
